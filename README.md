@@ -3,6 +3,7 @@
 - here you will find my personal configuration for the application that i use in linux
 
 # Dependencies
+- [shell-promp](https://starship.rs/)
 - [nerd-fonts](https://www.nerdfonts.com)
 - [i3wm-guide](https://kifarunix.com/install-and-setup-i3-windows-manager-on-ubuntu-20-04/)
 - [dmenu](https://tools.suckless.org/dmenu/)
