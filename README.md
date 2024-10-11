@@ -10,6 +10,7 @@
 - [feh-image-viewer](https://feh.finalrewind.org/)
 - [tmux](https://github.com/tmux/tmux/wiki)
 - [neovim-personal-repository](https://github.com/AlfonsoG-dev/nvim)
+- [light](https://askubuntu.com/questions/1344269/20-04-adjust-display-brightness-in-smaller-steps-with-brightness-buttons)
 
 # How to
 - this are a compilation of my configuration files and are here to whenever i need them for my personal *LINUX* machines
