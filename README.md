@@ -9,7 +9,7 @@
 - [dmenu](https://tools.suckless.org/dmenu/)
 - [feh-image-viewer](https://feh.finalrewind.org/)
 - [tmux](https://github.com/tmux/tmux/wiki)
-- [neovim-personal-repository](https://github.com/AlfonsoG-dev/nvim)
+- [neovim-personal-repository](https://github.com/AlfonsoG-dev/nvim_linux)
 - [light](https://askubuntu.com/questions/1344269/20-04-adjust-display-brightness-in-smaller-steps-with-brightness-buttons)
 
 # How to
