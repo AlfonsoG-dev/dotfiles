@@ -14,6 +14,7 @@
 ### Powershell profile
 - [Terminal-Icons](https://github.com/devblackops/Terminal-Icons)
 - [posh-git](https://www.powershellgallery.com/packages/posh-git/1.1.0)
+- [oh-my-posh](https://ohmyposh.dev)
 ## Neovim editor
 - [neovim-personal-repository](https://github.com/AlfonsoG-dev/nvim_linux)
 ## Tmux
