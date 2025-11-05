@@ -1,0 +1,58 @@
+[window]
+opacity = 0.95
+decorations = "full"
+dynamic_padding = true
+
+[window.dimensions]
+columns = 140
+lines = 50
+
+[scrolling]
+history = 10000
+multiplier = 3
+
+[font]
+size = 11.5
+
+[cursor]
+style = { shape = "Beam", blinking = "On" }
+unfocused_hollow = true
+
+[colors.primary]
+background = "#1F1F28"
+foreground = "#DCD7BA"
+
+[colors.normal]
+black   = "#090618"
+red     = "#C34043"
+green   = "#76946A"
+yellow  = "#C0A36E"
+blue    = "#7E9CD8"
+magenta = "#957FB8"
+cyan    = "#6A9589"
+white   = "#C8C093"
+
+[colors.bright]
+black   = "#727169"
+red     = "#E82424"
+green   = "#98BB6C"
+yellow  = "#E6C384"
+blue    = "#7FB4CA"
+magenta = "#938AA9"
+cyan    = "#7AA89F"
+white   = "#DCD7BA"
+
+[colors.selection]
+text = "#C8C093"
+background = "#2D4F67"
+
+[colors.cursor]
+text = "#1F1F28"
+cursor = "#FF0000"
+
+[colors.vi_mode_cursor]
+text = "#1F1F28"
+cursor = "#FF0000"
+
+[env]
+TERM = "xterm-256color"
