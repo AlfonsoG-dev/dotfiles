@@ -5,8 +5,8 @@ local config = wezterm.config_builder()
 config.color_schemes = {
     ['KanagawaWave'] = {
         background = '#1F1F28',
-        foreground = '#D8D8D9',
         cursor_bg  = '#C80000',
+        foreground = '#D8D8D9',
         cursor_fg  = '#1F1F28',
         selection_bg = '#2D4F67',
         selection_fg = '#D8D8D9',
@@ -53,12 +53,12 @@ config.font_size = 12.0
 config.default_cursor_style = 'BlinkingBlock'
 
 -- change font
-config.font = wezterm.font('Iosevka Nerd Font Mono')
+config.font = wezterm.font('Iosevka Nerd Font')
 
 -- background image
-config.window_background_image = 'D:/Descargas/archivos/imagenes/wallpaperflare.com_wallpaper (2).jpg'
+config.window_background_image = 'D:/Descargas/archivos/imagenes/fonto_term.jpg'
 config.window_background_image_hsb = {
-    brightness = 0.03,
+    brightness = 0.05,
     hue = 1.0,
     saturation = 1.0,
 }
@@ -103,8 +103,57 @@ config.keys = {
         key = 'l',
         mods = 'LEADER|SHIFT',
         action = wezterm.action.RotatePanes('Clockwise'),
-    }
+    },
+    {
+        key = ",",
+        mods = "LEADER",
+        action = wezterm.action.PromptInputLine {
+            description = 'Enter new name for tab',
+            action = wezterm.action_callback(function(window, pane, line)
+                    if line then
+                        window:active_tab():set_title(line)
+                    end
+            end),
+        },
+    },
+    {
+        key = "r",
+        mods = "LEADER",
+        action = wezterm.action.ActivateKeyTable {
+            name = "resize_pane",
+            one_shot = false,
+        },
+    },
 }
+
+config.key_tables = {
+    resize_pane = {
+        { key = 'LeftArrow',  action = wezterm.action.AdjustPaneSize { 'Left', 2 } },
+        { key = 'h',          action = wezterm.action.AdjustPaneSize { 'Left', 2 } },
+
+        { key = 'RightArrow', action = wezterm.action.AdjustPaneSize { 'Right', 2 } },
+        { key = 'l',          action = wezterm.action.AdjustPaneSize { 'Right', 2 } },
+
+        { key = 'UpArrow',    action = wezterm.action.AdjustPaneSize { 'Up', 2 } },
+        { key = 'k',          action = wezterm.action.AdjustPaneSize { 'Up', 2 } },
+
+        { key = 'DownArrow',  action = wezterm.action.AdjustPaneSize { 'Down', 2 } },
+        { key = 'j',          action = wezterm.action.AdjustPaneSize { 'Down', 2 } },
+
+        -- Exit resize mode
+        { key = 'Escape', action = 'PopKeyTable' },
+        { key = 'Enter',  action = 'PopKeyTable' },
+    },
+}
+-- show resize state
+wezterm.on('update-right-status', function(window, pane)
+    local name = window:active_key_table()
+    if name then
+        name = 'MODE: ' .. name .. ' '
+    end
+    window:set_right_status(name or '')
+end)
+
 -- Intercept startup to apply coordinates for your primary monitor
 wezterm.on('gui-startup', function(cmd)
     local args = cmd or {}
